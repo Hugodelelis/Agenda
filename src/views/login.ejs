@@ -1,0 +1,54 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-4">
+            <h1 class="text-center">Register/Login</h1>
+            <p class="text-center lead">Faça login ou crie sua conta abaixo.</p>
+            <%- include('includes/messages') %>
+            <div class="row">
+                
+                <div class="col-lg">
+                    <h4 class="text-center">Faça seu cadastro</h4>
+                    <p>Se você ainda não tem conta preencha o formulário abaixo</p>
+
+                    <form action="/login/register" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="mb-3">
+                            <label class="form-label">Seu email</label>
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Sua senha</label>
+                            <input type="password" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Sua senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-4">Criar minha conta</button>
+                    </form>
+                </div>
+
+                <div class="col-lg">
+                    <h4 class="text-center">Faça seu login</h4>
+                    <p>Faça o seu login se você ja tem uma conta</p>
+                    <form action="/login/login" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="mb-3">
+                            <label class="form-label">Seu email</label>
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Seu email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Sua senha</label>
+                            <input type="password" class="form-control" name="password" aria-describedby="emailHelp" placeholder="Sua senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>
+            </div>
+
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

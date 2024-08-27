@@ -1,5 +1,3 @@
-// helmet e csrf
-
 require('dotenv').config() // variaveis de ambiente no .env que não podem ser exibidas
 
 // inicio do express
