@@ -45,7 +45,7 @@ app.use(flash()) // usando flash messages
 
 // views
 app.set('views', path.resolve(__dirname, 'src', 'views')) // usando os views
-app.set('view engine', 'ejs') // engine para renderizar o html
+app.set('view engine', 'ejs'); // engine para renderizar o html
 
 app.use(csrf()) // usando token csrf
 
